@@ -4,23 +4,27 @@ import Badge from "../components/Badge.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Proyects from "../components/Proyects.astro";
+
 
 
 import GithubIcon from "../icons/Github.astro";
 import LinkedinIcon from "../icons/Linkedin.astro";
 import MailIcon from "../icons/Mail.astro";
 import BriefcaseIcon from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/Code.astro";
+
 ---
 
 <Layout title="Jair Mora | Portafolio" descripcion="">
-  <main>
+  <main class="px-4">
     <SectionContainer class="py-44 py-20" >
       <img
         class="rounded-full size-12 mb-4"
         src="https://media.licdn.com/dms/image/D5603AQEn4x7MZH75HA/profile-displayphoto-shrink_800_800/0/1684459285192?e=2147483647&v=beta&t=XGrisDEpBgjLL_WpEWKpIzeaDMnPGMqgyRA66w_Z__U"
-        alt="midudev photo"
+        alt="Jair foto"
       />
-      <h1 class="text-white text-5xl font-bold flex flex-grow-0 gap-x-4 pb-10">
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-grow-0 gap-x-4 pb-6 lg:pb-10 ">
         Hola! Soy Jair <a
           href="https://www.linkedin.com/in/jair-martin-del-campo-a61647265/"
           target="_blank"
@@ -30,7 +34,7 @@ import BriefcaseIcon from "../icons/Briefcase.astro";
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h2 class="text-2xl opacity-80 mb-4 text-pretty">
+      <h2 class="text-lg lg:text-2xl text-wrap mb-4 max-w-[500px]">
         Estudiante de <span class="text-yellow-200/90"
           >Ingeniería de Desarrollo de Software</span
         >, especializandome en el <span class="text-blue-600/90">Backend</span>.
@@ -44,19 +48,19 @@ import BriefcaseIcon from "../icons/Briefcase.astro";
         >
       </h2>
 
-      <nav class="flex gap-x-2 mb-4">
+      <nav class="flex gap-4 mb-4 flex-wrap">
         <SocialPill
           href="https://www.linkedin.com/in/jair-martin-del-campo-a61647265/"
         >
-          <LinkedinIcon class="size-6" />
+          <LinkedinIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/JairMora21">
-          <GithubIcon class="size-6" />
+          <GithubIcon class="size-4 md:size-6" />
           GitHub
         </SocialPill>
         <SocialPill href="https://github.com/JairMora21">
-          <MailIcon class="size-6" />
+          <MailIcon class="size-4 md:size-6"/>
           jairantonio21@hotmail.com
         </SocialPill>
       </nav>
@@ -69,67 +73,13 @@ import BriefcaseIcon from "../icons/Briefcase.astro";
 	</h2>
       <Experience />
     </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
+		<CodeIcon class="sixe-8 mt-1"/>
+		Proyectos
+	</h2>
+      <Proyects />
+    </SectionContainer>
   </main>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-</style>
