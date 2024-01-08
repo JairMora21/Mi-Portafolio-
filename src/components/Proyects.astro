@@ -1,51 +1,138 @@
 ---
-import NextJS from "../icons/Github.astro"
-import Tailwind from "../icons/Linkedin.astro"
+import Api from "../icons/Api.astro";
+import Angular from "../icons/Angular.astro";
+import Cloud from "../icons/Cloud.astro";
+import Security from "../icons/Security.astro";
+import TS from "../icons/TS.astro";
+import DataBase from "../icons/DataBase.astro";
+import Code from "../icons/Code.astro";
+import ArrowRight from "../icons/ArrowRight.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import Boostrap from "../icons/Bootstrap.astro";
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  API: {
+    name: "API-ASP.NET",
+    class: "bg-[#0B568A] text-white",
+    icon: Api,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  ASPNET: {
+    name: "ASP.NET",
+    class: "bg-[#0B568A] text-white",
+    icon: Api,
   },
-}
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#C40030] text-white",
+    icon: Angular,
+  },
+  CLOUD: {
+    name: "Azure",
+    class: "bg-[#00BCF1] text-white",
+    icon: Cloud,
+  },
+  SECURITY: {
+    name: "JWT",
+    class: "bg-green-500/80 text-white",
+    icon: Security,
+  },
+  TS: {
+    name: "TypeScript",
+    class: "bg-[#2D79C7] text-white",
+    icon: TS,
+  },
+  DATABASE: {
+    name: "SQLServer",
+    class: "bg-yellow-400/80 text-white",
+    icon: DataBase,
+  },
+  CODE: {
+    name: "C#",
+    class: "bg-[#7B3399] text-white",
+    icon: Code,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#830AFA] text-white",
+    icon: Boostrap,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-[#F7E018]/90 text-white",
+    icon: JavaScript,
+  },
+};
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Soccer Stats",
     description:
-      "Created from scratch with Next.js and Tailwind CSS. It's a library with SVG logos from the most popular brands. Optimized for SEO and performance.",
+      "Aplicación dedicada a los fanáticos del fútbol y las estadísticas, es perfecta para equipos de futbol 7 y 11. Soccer Stats ofrece una sólida base de datos y una API que accede a las estadísticas de tu equipo y jugadores la cual puedes vizualizar por medio de una aplicación web en Angular y registrar  los datos de tu equipo fácilmente con la app móvil. ",
     link: "https://svgl.vercel.app/",
+    details: "/soccerstats",
     github: "https://github.com/pheralb/svgl",
-    image: "https://c4.wallpaperflare.com/wallpaper/10/887/781/angular-javascript-html-wallpaper-preview.jpg",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    image:
+      "https://c4.wallpaperflare.com/wallpaper/10/887/781/angular-javascript-html-wallpaper-preview.jpg",
+    tags: [
+      TAGS.CODE,
+      TAGS.API,
+      TAGS.SECURITY,
+      TAGS.DATABASE,
+      TAGS.ANGULAR,
+      TAGS.TS,
+      TAGS.BOOTSTRAP,
+    ],
   },
-]
+
+  {
+    title: "Admin Rooms",
+    description:
+      "Si eres arrendador, gestionas múltiples propiedades/cuartos y buscas llevar un control preciso de tus finanzas e inmuebles, Admin Rooms es la aplicación perfecta para ti. Con Admin Rooms, puedes registrar los datos de tus clientes, hacer un seguimiento de los pagos, generar recibos digitales en formato PDF y realizar análisis detallados de tus ganancias y gastos a través de gráficas visuales.",
+    link: "https://svgl.vercel.app/",
+    details: "/adminrooms",
+    github: "https://github.com/pheralb/svgl",
+    image:
+      "https://c4.wallpaperflare.com/wallpaper/10/887/781/angular-javascript-html-wallpaper-preview.jpg",
+    tags: [
+      TAGS.ASPNET,
+      TAGS.CODE,
+      TAGS.DATABASE,
+      TAGS.CLOUD,
+      TAGS.JS,
+      TAGS.BOOTSTRAP,
+    ],
+  },
+];
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-2">
+  PROJECTS.map(({ image, title, description, tags, details }) => (
+    <article class="mb-10">
+      <h3 class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-2 flex items-center justify-between">
         {title}
+        <a
+          href={details}
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700
+        "
+        >
+          <span class="mx-2">Ver mas detalles</span>{" "}
+          <ArrowRight class="size-4" />
+        </a>
       </h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
+      <ul class="flex gap-4 mb-4 flex-wrap">
         {tags.map((tag) => (
-          <li>
+          <li class="">
             <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+              class={`flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 ${tag.class} py-1 px-2 border border-white/30`}
             >
               <tag.icon class="size-4" />
-              {tag.name}
+              <span class="mt-1">{tag.name}</span>
             </span>
           </li>
         ))}
       </ul>
+      <div class="" />
+
       <img
         loading="lazy"
         class="rounded shadow-2xl shadow-white/10 aspect-video"

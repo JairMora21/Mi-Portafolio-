@@ -6,25 +6,26 @@ import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Proyects from "../components/Proyects.astro";
 
-
-
 import GithubIcon from "../icons/Github.astro";
 import LinkedinIcon from "../icons/Linkedin.astro";
 import MailIcon from "../icons/Mail.astro";
 import BriefcaseIcon from "../icons/Briefcase.astro";
+import SchoolIcon from "../icons/School.astro";
 import CodeIcon from "../icons/Code.astro";
-
+import Estudios from "../components/Estudios.astro";
 ---
 
 <Layout title="Jair Mora | Portafolio" descripcion="">
   <main class="px-4">
-    <SectionContainer class="py-44 py-20" >
+    <SectionContainer class="py-44 py-20">
       <img
         class="rounded-full size-12 mb-4"
         src="https://media.licdn.com/dms/image/D5603AQEn4x7MZH75HA/profile-displayphoto-shrink_800_800/0/1684459285192?e=2147483647&v=beta&t=XGrisDEpBgjLL_WpEWKpIzeaDMnPGMqgyRA66w_Z__U"
         alt="Jair foto"
       />
-      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-grow-0 gap-x-4 pb-6 lg:pb-10 ">
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-grow-0 gap-x-4 pb-6 lg:pb-10"
+      >
         Hola! Soy Jair <a
           href="https://www.linkedin.com/in/jair-martin-del-campo-a61647265/"
           target="_blank"
@@ -34,7 +35,7 @@ import CodeIcon from "../icons/Code.astro";
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h2 class="text-lg lg:text-2xl text-wrap mb-4 max-w-[500px]">
+      <h2 class="text-lg lg:text-2xl text-wrap mb-4">
         Estudiante de <span class="text-yellow-200/90"
           >Ingeniería de Desarrollo de Software</span
         >, especializandome en el <span class="text-blue-600/90">Backend</span>.
@@ -47,7 +48,6 @@ import CodeIcon from "../icons/Code.astro";
           Frontend</span
         >
       </h2>
-
       <nav class="flex gap-4 mb-4 flex-wrap">
         <SocialPill
           href="https://www.linkedin.com/in/jair-martin-del-campo-a61647265/"
@@ -60,7 +60,7 @@ import CodeIcon from "../icons/Code.astro";
           GitHub
         </SocialPill>
         <SocialPill href="https://github.com/JairMora21">
-          <MailIcon class="size-4 md:size-6"/>
+          <MailIcon class="size-4 md:size-6" />
           jairantonio21@hotmail.com
         </SocialPill>
       </nav>
@@ -68,17 +68,27 @@ import CodeIcon from "../icons/Code.astro";
 
     <SectionContainer id="experiencia">
       <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
-		<BriefcaseIcon class="sixe-8 mt-1"/>
-		Experencia Laboral
-	</h2>
+        <BriefcaseIcon class="sixe-8 mt-1" />
+        Experencia Laboral
+      </h2>
       <Experience />
     </SectionContainer>
+    
+    <SectionContainer id="estudios" class="mb-10">
+      <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
+        <SchoolIcon class="sixe-8 mt-1" />
+        Estudios y Certificados
+      </h2>
+      <Estudios />
+    </SectionContainer>
+
+   
 
     <SectionContainer id="proyectos">
       <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
-		<CodeIcon class="sixe-8 mt-1"/>
-		Proyectos
-	</h2>
+        <CodeIcon class="sixe-8 mt-1" />
+        Proyectos
+      </h2>
       <Proyects />
     </SectionContainer>
   </main>
