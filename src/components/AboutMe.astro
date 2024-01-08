@@ -1,23 +1,34 @@
 ---
-import Check from "../icons/Check.astro";
+import SocialPill from "../components/SocialPillTecno.astro";
+
 import Angular from "../icons2/Angular.astro";
 import Boostrap from "../icons2/Boostrap.astro";
-import Css from "../icons2/css.astro";
-import AstroIcon from "../icons2/Astro.astro";
+import Css from "../icons2/Css.astro";
 import CSharp from "../icons2/CSharp.astro";
-import DataBase from "../icons/DataBase.astro";
-import API from "../icons/Api.astro";
 import Github from "../icons2/Github.astro";
-
+import Html5 from "../icons2/Html.astro";
+import Git from "../icons2/Git.astro";
+import Java from "../icons2/Java.astro";
+import JavaScript from "../icons2/JavaScript.astro";
 import TS from "../icons2/TypeScript.astro";
+import NET from "../icons2/Net.astro";
+import SQLServer from "../icons2/SQLServer.astro";
 
-import SocialPill from "../components/SocialPillTecno.astro";
+import Check from "../icons/Check.astro";
+import DataBase from "../icons/DataBase.astro";
 import Api from "../icons/Api.astro";
+import MVC from "../icons/Arquitectura.astro";
+import DataBaseEdit from "../icons/DataBaseEdit.astro";
+import CodeIcon from "../icons/Code.astro";
+import Frontend from "../icons/Design.astro"
+import Backend from "../icons/ComputerCode.astro"
+import More from "../icons/More.astro"
+
 ---
 
 <div>
-  <div>
-    <h4 class="text-lg font-semibold text-yellow-200">Idiomas</h4>
+  <div class="mb-3">
+    <h4 class="text-xl font-semibold text-yellow-200 mb-1">Idiomas</h4>
     <ul class="max-w-md space-y-1 list-inside">
       <li class="flex items-center">
         <Check />
@@ -30,61 +41,118 @@ import Api from "../icons/Api.astro";
     </ul>
   </div>
   <div>
-    <h4 class="text-lg font-semibold text-yellow-200">Tecnologias</h4>
+    <h4 class="text-xl font-semibold text-yellow-200 mb-1">Tecnologias</h4>
     <div>
-      <h6>Lenguajes de programacion</h6>
+      <div class="flex">
+        <CodeIcon class="size-4 md:size-6" />
+        <h6 class="font-semibold text-blue-200 mb-1 ml-2">
+          Lenguajes de programacion
+        </h6>
+      </div>
       <nav class="flex gap-4 mb-4 flex-wrap mt-2">
-        <SocialPill>
-          <TS />
-          TypeScript
-        </SocialPill>
         <SocialPill>
           <CSharp />
           C#
         </SocialPill>
+        <SocialPill>
+          <Java />
+          Java
+        </SocialPill>
+        <SocialPill>
+          <JavaScript />
+          JavaScript
+        </SocialPill>
+        <SocialPill>
+          <TS />
+          TypeScript
+        </SocialPill>
       </nav>
     </div>
     <div>
-      <h6>Backend</h6>
-      <nav class="flex gap-4 mb-4 flex-wrap mt-2">
+      <div class="flex">
+        <Backend class="size-3 md:size-5" />
+        <h6 class="font-semibold text-blue-200 mb-1 ml-2">
+          Backend
+        </h6>
+      </div>      <nav class="flex gap-4 mb-4 flex-wrap mt-2">
+        <SocialPill>
+          <Api />
+          RESTful API
+        </SocialPill>
+        <SocialPill>
+          <NET />
+          .NET
+        </SocialPill>
+        <SocialPill>
+          <NET />
+          ASP.NET
+        </SocialPill>
+        <SocialPill>
+          <NET />
+          Entity Framework
+        </SocialPill>
+        <SocialPill>
+          <SQLServer />
+          SQL Server
+        </SocialPill>
         <SocialPill>
           <DataBase />
           Base de datos - SQL
         </SocialPill>
         <SocialPill>
-            <Api />
-            API
-          </SocialPill>
+          <DataBaseEdit />
+          Stored Procedures
+        </SocialPill>
       </nav>
     </div>
   </div>
   <div>
-    <h6>Frontend</h6>
-    <nav class="flex gap-4 mb-4 flex-wrap mt-2">
+    <div class="flex">
+      <Frontend class="size-3 md:size-5" />
+      <h6 class="font-semibold text-blue-200 mb-1 ml-2">
+        Frontend
+      </h6>
+    </div>    <nav class="flex gap-4 mb-4 flex-wrap mt-2">
       <SocialPill>
-        <Angular />
-        Angular
-      </SocialPill>
-      <SocialPill>
-        <AstroIcon />
-        Astro
-      </SocialPill>
-      <SocialPill>
-        <Boostrap />
-        Bootstrap
+        <Html5 />
+        HTML5
       </SocialPill>
       <SocialPill>
         <Css />
         CSS
       </SocialPill>
+      <SocialPill>
+        <Angular />
+        Angular
+      </SocialPill>
+      <SocialPill>
+        <Boostrap />
+        Bootstrap
+      </SocialPill>
     </nav>
   </div>
   <div>
-    <h6>Adicionales</h6>
-    <nav class="flex gap-4 mb-4 flex-wrap mt-2">
+    <div class="flex">
+      <More class="size-4 md:size-6" />
+      <h6 class="font-semibold text-blue-200 mb-1 ml-2">
+        Adicionales
+      </h6>
+    </div>    <nav class="flex gap-4 mb-4 flex-wrap mt-2">
       <SocialPill>
         <Github />
-        Git y GitHub
+        GitHub
+      </SocialPill>
+      <SocialPill>
+        <Git />
+        Git
+      </SocialPill>
+      <SocialPill>
+        <MVC />
+        MVC
+      </SocialPill>
+      <SocialPill>
+        <MVC />
+        MVVM
       </SocialPill>
     </nav>
   </div>
