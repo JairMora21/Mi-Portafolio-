@@ -5,6 +5,8 @@ import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Proyects from "../components/Proyects.astro";
+import Estudios from "../components/Estudios.astro";
+import AboutMe from "../components/AboutMe.astro"
 
 import GithubIcon from "../icons/Github.astro";
 import LinkedinIcon from "../icons/Linkedin.astro";
@@ -12,12 +14,12 @@ import MailIcon from "../icons/Mail.astro";
 import BriefcaseIcon from "../icons/Briefcase.astro";
 import SchoolIcon from "../icons/School.astro";
 import CodeIcon from "../icons/Code.astro";
-import Estudios from "../components/Estudios.astro";
+import UserIcon from "../icons/User.astro";
 ---
 
 <Layout title="Jair Mora | Portafolio" descripcion="">
   <main class="px-4">
-    <SectionContainer class="py-44 py-20">
+    <SectionContainer class="pt-20 pb-20">
       <img
         class="rounded-full size-12 mb-4"
         src="https://media.licdn.com/dms/image/D5603AQEn4x7MZH75HA/profile-displayphoto-shrink_800_800/0/1684459285192?e=2147483647&v=beta&t=XGrisDEpBgjLL_WpEWKpIzeaDMnPGMqgyRA66w_Z__U"
@@ -66,6 +68,13 @@ import Estudios from "../components/Estudios.astro";
       </nav>
     </SectionContainer>
 
+    <SectionContainer class="mb-10">
+      <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
+        <UserIcon class="sixe-8 mt-1" />
+        Sobre Mi
+      </h2>
+      <AboutMe/>
+    </SectionContainer>
     <SectionContainer id="experiencia">
       <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
         <BriefcaseIcon class="sixe-8 mt-1" />
@@ -73,7 +82,7 @@ import Estudios from "../components/Estudios.astro";
       </h2>
       <Experience />
     </SectionContainer>
-    
+
     <SectionContainer id="estudios" class="mb-10">
       <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
         <SchoolIcon class="sixe-8 mt-1" />

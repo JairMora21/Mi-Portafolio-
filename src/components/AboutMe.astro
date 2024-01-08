@@ -1,0 +1,91 @@
+---
+import Check from "../icons/Check.astro";
+import Angular from "../icons2/Angular.astro";
+import Boostrap from "../icons2/Boostrap.astro";
+import Css from "../icons2/css.astro";
+import AstroIcon from "../icons2/Astro.astro";
+import CSharp from "../icons2/CSharp.astro";
+import DataBase from "../icons/DataBase.astro";
+import API from "../icons/Api.astro";
+import Github from "../icons2/Github.astro";
+
+import TS from "../icons2/TypeScript.astro";
+
+import SocialPill from "../components/SocialPillTecno.astro";
+import Api from "../icons/Api.astro";
+---
+
+<div>
+  <div>
+    <h4 class="text-lg font-semibold text-yellow-200">Idiomas</h4>
+    <ul class="max-w-md space-y-1 list-inside">
+      <li class="flex items-center">
+        <Check />
+        Español - Nativo
+      </li>
+      <li class="flex items-center">
+        <Check />
+        Ingles - Intermedio/Avanzado
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h4 class="text-lg font-semibold text-yellow-200">Tecnologias</h4>
+    <div>
+      <h6>Lenguajes de programacion</h6>
+      <nav class="flex gap-4 mb-4 flex-wrap mt-2">
+        <SocialPill>
+          <TS />
+          TypeScript
+        </SocialPill>
+        <SocialPill>
+          <CSharp />
+          C#
+        </SocialPill>
+      </nav>
+    </div>
+    <div>
+      <h6>Backend</h6>
+      <nav class="flex gap-4 mb-4 flex-wrap mt-2">
+        <SocialPill>
+          <DataBase />
+          Base de datos - SQL
+        </SocialPill>
+        <SocialPill>
+            <Api />
+            API
+          </SocialPill>
+      </nav>
+    </div>
+  </div>
+  <div>
+    <h6>Frontend</h6>
+    <nav class="flex gap-4 mb-4 flex-wrap mt-2">
+      <SocialPill>
+        <Angular />
+        Angular
+      </SocialPill>
+      <SocialPill>
+        <AstroIcon />
+        Astro
+      </SocialPill>
+      <SocialPill>
+        <Boostrap />
+        Bootstrap
+      </SocialPill>
+      <SocialPill>
+        <Css />
+        CSS
+      </SocialPill>
+    </nav>
+  </div>
+  <div>
+    <h6>Adicionales</h6>
+    <nav class="flex gap-4 mb-4 flex-wrap mt-2">
+      <SocialPill>
+        <Github />
+        Git y GitHub
+      </SocialPill>
+    </nav>
+  </div>
+</div>
