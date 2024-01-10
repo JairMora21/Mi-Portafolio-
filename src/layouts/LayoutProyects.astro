@@ -2,12 +2,14 @@
 interface Props {
   title: string;
   descripcion: string;
+
 }
 
 const { title, descripcion } = Astro.props;
-import Header from "../components/Header.astro";
+import Header from "../components/HeaderProyects.astro";
 import "@fontsource-variable/onest";
 import Footer from "../components/Footer.astro";
+
 ---
 
 <!doctype html>
@@ -19,24 +21,17 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
   </head>
   <body class="">
     <div
       class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
     >
     </div>
-
     <Header />
     <slot />
     <Footer />
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   </body>
 </html>
 <style is:global>
@@ -45,7 +40,7 @@ import Footer from "../components/Footer.astro";
   }
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
   }
 
   body {
@@ -54,9 +49,9 @@ import Footer from "../components/Footer.astro";
     flex-direction: column;
     min-height: 100vh;
   }
-  @media (prefers-reduce-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+  @media (prefers-reduce-motion: reduce){
+	html{
+		scroll-behavior: auto;
+	}
   }
 </style>

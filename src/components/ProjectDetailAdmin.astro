@@ -1,0 +1,165 @@
+---
+const IMAGENESBD = [
+  {
+    nombre: "Diagrama ER",
+    url: "/src/images/AdminRooms/bd/DiagramaER.png",
+  },
+  {
+    nombre: "Query 1",
+    url: "/src/images/AdminRooms/bd/Query.jpg",
+  },
+  {
+    nombre: "Query 2",
+    url: "/src/images/AdminRooms/bd/Query2.jpg",
+  },
+];
+
+const IMAGENESASP = [
+  {
+    nombre: "Logo",
+    url: "/src/images/AdminRooms/asp/logo.jpg",
+  },
+  {
+    nombre: "Estructura",
+    url: "/src/images/AdminRooms/asp/estructura.jpg",
+  },
+];
+
+
+const IMAGENESAZURE = [
+  {
+    nombre: "Logo",
+    url: "/src/images/AdminRooms/azure/logo.jpg",
+  },
+  {
+    nombre: "azure details",
+    url: "/src/images/AdminRooms/azure/azure.jpg",
+  },
+];
+const IMAGENESLIBRERIA = [
+  {
+    nombre: "Logos",
+    url: "/src/images/AdminRooms/librerias/Logo.jpg",
+  },
+  {
+    nombre: "Graficas",
+    url: "/src/images/AdminRooms/librerias/Graficas.jpg",
+  },
+  {
+    nombre: "Diferences",
+    url: "/src/images/AdminRooms/librerias/PDF.jpg",
+  },
+];
+const DETALLES = [
+  {
+    tecnologia: "ASP.NET",
+    descripcion:
+      "Desarollada en C# con una arquitectura MVC, tambien se implemento la inyeccion de dependencias, librerias externas y el uso de interfaces para mejorar la modularidad y mantenibilidad del codigo. Este enfoque permite escalabilidad y flexibilidad en el proyecto",
+    descripcion2: "",
+    fotos: IMAGENESASP,
+    link: "",
+  },
+  {
+    tecnologia: "Base de Datos - ORM",
+    descripcion:
+      "Utilice SQL Server para desarrollar una base de datos solida y eficaz. Implementé constrains adecuados para prevenir posibles errores en la integridad de los datos.",
+    descripcion2:
+      " Para la ejecución de consultas, he integrado el ORM Entity Framework, simplificando el proceso de obtención de información de manera eficiente. ",
+    fotos: IMAGENESBD,
+    link: "",
+  },
+  {
+    tecnologia: "Azure",
+    descripcion:
+      "Opté por Azure como la solución para almacenar de forma segura los datos de la aplicación en la nube. Contraté un servidor en la plataforma para gestionar y almacenar eficientemente la información",
+    descripcion2: "",
+    fotos: IMAGENESAZURE,
+    link: "",
+  },
+  {
+    tecnologia: "Librerias Externas",
+    descripcion:
+      "Para habilitar la generación de PDFs y la visualización de gráficos en la aplicación, se incorporaron dos librerías esenciales: Rotativa para la generación de PDFs y Chart.js para la creación de gráficos. Estas herramientas desempeñan un papel fundamental en el funcionamiento integral del sistema.",
+    descripcion2: "",
+    fotos: IMAGENESLIBRERIA,
+    link: "",
+  },
+];
+---
+
+{
+  DETALLES.map(({ tecnologia, descripcion, descripcion2, fotos, link }) => (
+    <article class="mb-10">
+      <h3 class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-2 flex items-center justify-between">
+        {tecnologia}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{descripcion}</p>
+      <p class="text-lg mb-4 text-pretty">{descripcion2}</p>
+      <div
+        id="animation-carousel"
+        class="relative w-full"
+        data-carousel="static"
+      >
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          {fotos.map((f) => (
+            <div class="hidden duration-200 ease-linear" data-carousel-item>
+              <img
+                src={f.url}
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt={f.nombre}
+              />
+            </div>
+          ))}
+        </div>
+        <button
+          type="button"
+          class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+    </article>
+  ))
+}

@@ -1,0 +1,174 @@
+---
+const IMAGENESBD = [
+  {
+    nombre: "Diagrama ER",
+    url: "/src/images/SoccerStats/bd/DiagramaER.png",
+  },
+  {
+    nombre: "Query 1",
+    url: "/src/images/SoccerStats/bd/Query1.jpg",
+  },
+  {
+    nombre: "Query 2",
+    url: "/src/images/SoccerStats/bd/Query2.jpg",
+  },
+];
+
+const IMAGENESAPI = [
+  {
+    nombre: "StatusCode",
+    url: "/src/images/SoccerStats/Api/StatusCode.jpg",
+  },
+  {
+    nombre: "WebAPi",
+    url: "/src/images/SoccerStats/Api/WebApi.jpg",
+  },
+];
+
+const IMAGENESJWT = [
+  {
+    nombre: "JWT",
+    url: "/src/images/SoccerStats/seguridad/JWT.jpg",
+  },
+  {
+    nombre: "Diferences",
+    url: "/src/images/SoccerStats/seguridad/Diferences.jpg",
+  },
+  {
+    nombre: "StatusCode",
+    url: "/src/images/SoccerStats/seguridad/UnlockJWT.jpg",
+  },
+];
+
+const IMAGENESMAUI = [
+  {
+    nombre: "JWT",
+    url: "/src/images/SoccerStats/MAUI/soon.jpg",
+  },
+  {
+    nombre: "Diferences",
+    url: "/src/images/SoccerStats/MAUI/maui.jpg",
+  },
+];
+const DETALLES = [
+  {
+    tecnologia: "Web API",
+    descripcion:
+      "Construida en C# con ASP.NET, la API ofrece una sólida capacidad de interacción para acceder y manipular datos fácilmente. Proporciona servicios RESTful y presenta estatus de respuesta detallados en todos los endpoints para facilitar la identificación y solución de problemas durante las interacciones.",
+    descripcion2: "",
+    fotos: IMAGENESAPI,
+    link: "",
+  },
+  {
+    tecnologia: "Seguridad - JWT",
+    descripcion:
+      "La seguridad es parte fundamental de cualquier proyecto y mas si el proyecto se encuentra alojado en la web, para crubrir esta necesidad utilice JWT, una solución ampliamente adoptada y eficaz en el entorno de las APIs.",
+    descripcion2: "",
+    fotos: IMAGENESJWT,
+    link: "",
+  },
+  {
+    tecnologia: "Base de Datos - ORM",
+    descripcion:
+      "He utilizado SQL Server para desarrollar una base de datos solida que posibilita la creación multiples equipos según nuestras necesidades. Implementé constrains adecuados para prevenir posibles errores en la integridad de los datos. ",
+    descripcion2:
+      " Para la ejecución de consultas, he integrado el ORM Entity Framework en la API, simplificando el proceso de obtención de información de manera eficiente.",
+    fotos: IMAGENESBD,
+    link: "",
+  },
+  {
+    tecnologia: "Angular",
+    descripcion:
+      "La aplicación ofrece una estructura robusta y modular, combinada con un diseño intuitivo y agradable para el usuario, además, es completamente responsiva, permitiendo su uso tanto en computadoras como en dispositivos móviles. ",
+    descripcion2:
+      " La carga de datos es impulsada por dos factores clave: la elección del equipo y temporada seleccionada. Estos datos son consumidos de manera eficiente a través de una API, garantizando una experiencia fluida y actualizada",
+    fotos: IMAGENESJWT,
+    link: "",
+  },
+  {
+    tecnologia: "App Mobile",
+    descripcion:
+      "Actualmente, la aplicación se encuentra en desarrollo, pero la idea principal es implementarla en .NET MAUI. Esta aplicación facilitará las consultas de modificación (post, delete, update), simplificando el proceso de registro de datos después de cada partido. ",
+    descripcion2: "",
+    fotos: IMAGENESMAUI,
+    link: "",
+  },
+];
+---
+
+{
+  DETALLES.map(({ tecnologia, descripcion, descripcion2, fotos, link }) => (
+    <article class="mb-10">
+      <h3 class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-2 flex items-center justify-between">
+        {tecnologia}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{descripcion}</p>
+      <p class="text-lg mb-4 text-pretty">{descripcion2}</p>
+      <div
+        id="animation-carousel"
+        class="relative w-full"
+        data-carousel="static"
+      >
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          {fotos.map((f) => (
+            <div class="hidden duration-200 ease-linear" data-carousel-item>
+              <img
+                src={f.url}
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt={f.nombre}
+              />
+            </div>
+          ))}
+        </div>
+        <button
+          type="button"
+          class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg
+              class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+    </article>
+  ))
+}
