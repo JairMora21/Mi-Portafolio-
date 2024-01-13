@@ -24,6 +24,7 @@ import Frontend from "../icons/Design.astro"
 import Backend from "../icons/ComputerCode.astro"
 import More from "../icons/More.astro"
 import NextJs from "../icons2/NextJs.astro";
+import AstroIcon from "../icons2/Astro.astro";
 
 ---
 
@@ -33,11 +34,11 @@ import NextJs from "../icons2/NextJs.astro";
     <ul class="max-w-md space-y-1 list-inside">
       <li class="flex items-center ">
         <Check />
-        Español - Nativo
+        <span class="text-lg">Español - Nativo</span>
       </li>
       <li class="flex items-center">
         <Check />
-        Ingles - Intermedio/Avanzado
+        <span class="text-lg">Ingles - Intermedio/Avanzado</span>
       </li>
     </ul>
   </div>
@@ -46,7 +47,7 @@ import NextJs from "../icons2/NextJs.astro";
     <div>
       <div class="flex">
         <CodeIcon class="size-4 md:size-6" />
-        <h6 class="font-bold text-white mb-1 ml-2">
+        <h6 class="font-bold text-white mb-1 ml-2 text-lg ">
           Lenguajes de programacion
         </h6>
       </div>
@@ -72,7 +73,7 @@ import NextJs from "../icons2/NextJs.astro";
     <div>
       <div class="flex">
         <Backend class="size-3 md:size-5" />
-        <h6 class="font-bold text-white mb-1 ml-2">
+        <h6 class="font-bold text-white mb-1 ml-2 text-lg">
           Backend
         </h6>
       </div>      <nav class="flex gap-4 mb-4 flex-wrap mt-2">
@@ -114,7 +115,7 @@ import NextJs from "../icons2/NextJs.astro";
   <div>
     <div class="flex">
       <Frontend class="size-3 md:size-5" />
-      <h6 class="font-bold text-white mb-1 ml-2">
+      <h6 class="font-bold text-white mb-1 ml-2 text-lg">
         Frontend
       </h6>
     </div>    <nav class="flex gap-4 mb-4 flex-wrap mt-2">
@@ -131,6 +132,10 @@ import NextJs from "../icons2/NextJs.astro";
         Angular
       </SocialPill>
       <SocialPill>
+        <AstroIcon />
+        Astro
+      </SocialPill>
+      <SocialPill>
         <Boostrap />
         Bootstrap
       </SocialPill>
@@ -139,7 +144,7 @@ import NextJs from "../icons2/NextJs.astro";
   <div>
     <div class="flex">
       <More class="size-4 md:size-6" />
-      <h6 class="font-bold text-white mb-1 ml-2">
+      <h6 class="font-bold text-white mb-1 ml-2 text-lg">
         Adicionales
       </h6>
     </div>    <nav class="flex gap-4 mb-4 flex-wrap mt-2">
