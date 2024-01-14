@@ -10,6 +10,10 @@ import ArrowRight from "../icons/ArrowRight.astro";
 import JavaScript from "../icons/JavaScript.astro";
 import Boostrap from "../icons/Bootstrap.astro";
 
+import SocialPill from "../components/SocialPill.astro";
+import GithubIcon from "../icons/Github.astro";
+import Play from "../icons/Play.astro";
+
 const TAGS = {
   API: {
     name: "API-ASP.NET",
@@ -80,7 +84,7 @@ const PROJECTS = [
       "Aplicación dedicada a los fanáticos del fútbol y estadísticas, es perfecta para equipos de futbol 7 y 11. Soccer Stats ofrece una sólida base de datos y una API que accede a las estadísticas de tu equipo y jugadores la cual puedes vizualizar por medio de una aplicación web en Angular y registrar  los datos de tu equipo fácilmente con la app móvil. ",
     link: "https://svgl.vercel.app/",
     details: "/soccerstats",
-    github: "https://github.com/pheralb/svgl",
+    github: "https://github.com/JairMora21/AngularFutbolStats",
     image: IMAGESSOCCER,
     tags: [
       TAGS.CODE,
@@ -90,8 +94,10 @@ const PROJECTS = [
       TAGS.ANGULAR,
       TAGS.TS,
       TAGS.BOOTSTRAP,
+      TAGS.CLOUD,
     ],
     video: false,
+    linksProjects: true,
   },
 
   {
@@ -111,6 +117,7 @@ const PROJECTS = [
       TAGS.BOOTSTRAP,
     ],
     video: true,
+    linksProjects: false,
   },
 ];
 ---
@@ -132,149 +139,176 @@ const PROJECTS = [
   }
 </style>
 {
-  PROJECTS.map(({ image, title, description, tags, details, video, link }) => (
-    <article class="mb-10">
-      <h3 class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-4 mt-5 flex items-center justify-between">
-        {title}
-        <a
-          href={details}
-          class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700
+  PROJECTS.map(
+    ({
+      image,
+      title,
+      description,
+      tags,
+      details,
+      video,
+      link,
+      linksProjects,
+      github
+    }) => (
+      <article class="mb-10">
+        <h3 class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-4 mt-5 flex items-center justify-between">
+          {title}
+          <a
+            href={details}
+            class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700
         "
-        >
-          <span class="mx-2">Ver mas detalles</span>{" "}
-          <ArrowRight class="size-4" />
-        </a>
-      </h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-4 mb-4 flex-wrap">
-        {tags.map((tag) => (
-          <li class="">
-            <span
-              class={`flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 ${tag.class} py-1 px-2 border border-white/30`}
-            >
-              <tag.icon class="size-4" />
-              <span class="mt-1">{tag.name}</span>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <div class="" />
+          >
+            <span class="mx-2">Ver mas detalles</span>{" "}
+            <ArrowRight class="size-4" />
+          </a>
+        </h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-4 mb-4 flex-wrap">
+          {tags.map((tag) => (
+            <li class="">
+              <span
+                class={`flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 ${tag.class} py-1 px-2 border border-white/30`}
+              >
+                <tag.icon class="size-4" />
+                <span class="mt-1">{tag.name}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
 
-      {video ? (
-        <div class="contenedor-responsivo">
-          <iframe
-            class="iframe-responsivo"
-            src={link}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          />
-        </div>
-      ) : (
-        <div
-          id="default-carousel"
-          class="relative w-full"
-          data-carousel="static"   
-        >
-          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-            {image.map((f) => (
-              <div class="hidden duration-200 ease-linear interval-10" data-carousel-item>
-                <img
-                  src={f.url}
-                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt={f.name}
-                />
-              </div>
-            ))}
+        {linksProjects ? (
+          <div class="flex gap-4 mb-4 flex-wrap">
+            <SocialPill href={github}>
+              <GithubIcon class="size-2 md:size-3" />
+              Repositorio Angular
+            </SocialPill>
+            <SocialPill href={link}>
+              <Play class="size-2 md:size-3" />
+              Ver Pagina
+            </SocialPill>
           </div>
-          <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            <button
-              type="button"
-              class="w-3 h-3 rounded-full"
-              aria-current="true"
-              aria-label="Slide 1"
-              data-carousel-slide-to="0"
-            />
-            <button
-              type="button"
-              class="w-3 h-3 rounded-full"
-              aria-current="false"
-              aria-label="Slide 2"
-              data-carousel-slide-to="1"
-            />
-            <button
-              type="button"
-              class="w-3 h-3 rounded-full"
-              aria-current="false"
-              aria-label="Slide 3"
-              data-carousel-slide-to="2"
-            />
-            <button
-              type="button"
-              class="w-3 h-3 rounded-full"
-              aria-current="false"
-              aria-label="Slide 4"
-              data-carousel-slide-to="3"
-            />
-            <button
-              type="button"
-              class="w-3 h-3 rounded-full"
-              aria-current="false"
-              aria-label="Slide 5"
-              data-carousel-slide-to="4"
+        ) : null}
+
+        {video ? (
+          <div class="contenedor-responsivo">
+            <iframe
+              class="iframe-responsivo"
+              src={link}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
             />
           </div>
-          <button
-            type="button"
-            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-prev
+        ) : (
+          <div
+            id="default-carousel"
+            class="relative w-full"
+            data-carousel="static"
           >
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg
-                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 1 1 5l4 4"
-                />
-              </svg>
-              <span class="sr-only">Previous</span>
-            </span>
-          </button>
-          <button
-            type="button"
-            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-next
-          >
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-              <svg
-                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m1 9 4-4-4-4"
-                />
-              </svg>
-              <span class="sr-only">Next</span>
-            </span>
-          </button>
-        </div>
-      )}
-    </article>
-  ))
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+              {image.map((f) => (
+                <div
+                  class="hidden duration-200 ease-linear interval-10"
+                  data-carousel-item
+                >
+                  <img
+                    src={f.url}
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    alt={f.name}
+                  />
+                </div>
+              ))}
+            </div>
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full"
+                aria-current="true"
+                aria-label="Slide 1"
+                data-carousel-slide-to="0"
+              />
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full"
+                aria-current="false"
+                aria-label="Slide 2"
+                data-carousel-slide-to="1"
+              />
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full"
+                aria-current="false"
+                aria-label="Slide 3"
+                data-carousel-slide-to="2"
+              />
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full"
+                aria-current="false"
+                aria-label="Slide 4"
+                data-carousel-slide-to="3"
+              />
+              <button
+                type="button"
+                class="w-3 h-3 rounded-full"
+                aria-current="false"
+                aria-label="Slide 5"
+                data-carousel-slide-to="4"
+              />
+            </div>
+            <button
+              type="button"
+              class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              data-carousel-prev
+            >
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg
+                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4"
+                  />
+                </svg>
+                <span class="sr-only">Previous</span>
+              </span>
+            </button>
+            <button
+              type="button"
+              class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+              data-carousel-next
+            >
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg
+                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 6 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4"
+                  />
+                </svg>
+                <span class="sr-only">Next</span>
+              </span>
+            </button>
+          </div>
+        )}
+      </article>
+    )
+  )
 }
