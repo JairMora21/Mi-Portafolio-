@@ -13,6 +13,8 @@ import Boostrap from "../icons/Bootstrap.astro";
 import SocialPill from "../components/SocialPill.astro";
 import GithubIcon from "../icons/Github.astro";
 import Play from "../icons/Play.astro";
+import { Carousel } from 'flowbite';
+
 
 const TAGS = {
   API: {
@@ -82,7 +84,7 @@ const PROJECTS = [
     title: "Soccer Stats",
     description:
       "Aplicación dedicada a los fanáticos del fútbol y estadísticas, es perfecta para equipos de futbol 7 y 11. Soccer Stats ofrece una sólida base de datos y una API que accede a las estadísticas de tu equipo y jugadores la cual puedes vizualizar por medio de una aplicación web en Angular y registrar  los datos de tu equipo fácilmente con la app móvil. ",
-    link: "https://svgl.vercel.app/",
+    link: "https://mysoccerstats.netlify.app",
     details: "/soccerstats",
     github: "https://github.com/JairMora21/AngularFutbolStats",
     image: IMAGESSOCCER,
@@ -103,7 +105,7 @@ const PROJECTS = [
   {
     title: "Admin Rooms",
     description:
-      "Si eres arrendador, gestionas múltiples propiedades/cuartos y buscas llevar un control preciso de tus finanzas e inmuebles, Admin Rooms es la aplicación perfecta para ti. Con Admin Rooms, puedes registrar los datos de tus clientes, hacer un seguimiento de los pagos, generar recibos digitales en formato PDF y realizar análisis detallados de tus ganancias y gastos a través de gráficas.",
+      "Si eres arrendador, gestionas múltiples propiedades/cuartos y buscas llevar un control preciso de tus finanzas e inmuebles, Admin Rooms es la aplicación perfecta para ti. Con Admin Rooms, puedes registrar los datos de tus clientes, hacer un seguimiento de los pagos, generar recibos digitales en formato PDF y realizar análisis detallados de tus ingresos y egresos a través de gráficas.",
     link: "https://www.youtube.com/embed/Ih4v7aqz5-4?si=uXsUNglya8XAyaMb",
     details: "/adminrooms",
     github: "https://github.com/pheralb/svgl",
@@ -120,6 +122,7 @@ const PROJECTS = [
     linksProjects: false,
   },
 ];
+
 ---
 
 <style>
@@ -138,6 +141,7 @@ const PROJECTS = [
     border: 0;
   }
 </style>
+
 {
   PROJECTS.map(
     ({
