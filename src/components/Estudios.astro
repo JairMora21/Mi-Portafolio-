@@ -5,20 +5,20 @@ import Word from "../icons2/Word.astro";
 
 const ESTUDIOS = [
   {
-    fecha: "2019 - 2024 (Esperado)",
+    fecha: "Agosto de 2019 - Mayo de 2024",
     certificacion:
       "Ingenieria en Desarollo de Software - Universidad Tecmilenio",
     verMas: false,
   },
   {
-    fecha: "2021 - 2024 (Esperado)",
+    fecha: "Agosto 2021 -  Mayo 2024",
     certificacion:
       "Certificado en Desarollo de Apps Moviles - Universidad Tecmilenio",
     verMas: false,
   },
   {
-    fecha: "2023",
-    certificacion: "Cursos Practicos y Teoricos en Platzi",
+    fecha: "2023 - 2024",
+    certificacion: "Cursos Practicos y Teoricos",
     verMas: true,
   },
 ];
@@ -34,6 +34,24 @@ const TAGS = {
   },
 };
 const CURSOS = [
+  {
+    fecha: "Enero 2024",
+    nombre: "Patrones de diseño",
+    link: "https://github.com/JairMora21/PatronesDeDiseno",
+    icono: TAGS.Github,
+  },
+  {
+    fecha: "Febrero 2024",
+    nombre: "S.O.L.I.D",
+    link: "https://github.com/JairMora21/SOLID",
+    icono: TAGS.Github,
+  },
+  {
+    fecha: "Marzo 2024",
+    nombre: "Nest.js",
+    link: "https://utmedu-my.sharepoint.com/:w:/g/personal/al02803344_tecmilenio_mx/EZZDHy1L0ttJg5calzPwmvMBdZAfJKjCFpbqvraumOs4fA?e=gunu80",
+    icono: TAGS.Word,
+  },
   {
     fecha: "Enero 2023",
     nombre: "Curso Profesional de Git y GitHub",
@@ -172,8 +190,12 @@ const CURSOS = [
                 <time class="block mb-3 text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
                   {fecha}
                 </time>
-                
-                <a href={link} target="_blank" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+
+                <a
+                  href={link}
+                  target="_blank"
+                  class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                >
                   <span class=" flex relative px-3 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     <icono.icon />
                     <span class="ml-1">{icono.name}</span>
