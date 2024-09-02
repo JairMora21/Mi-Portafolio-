@@ -9,11 +9,11 @@ import Code from "../icons/Code.astro";
 import ArrowRight from "../icons/ArrowRight.astro";
 import JavaScript from "../icons/JavaScript.astro";
 import Boostrap from "../icons/Bootstrap.astro";
+import TailWind from "../icons2/TailWind.astro";
 
 import SocialPill from "../components/SocialPill.astro";
 import GithubIcon from "../icons/Github.astro";
 import Play from "../icons/Play.astro";
-
 
 const TAGS = {
   API: {
@@ -66,62 +66,12 @@ const TAGS = {
     class: "bg-[#F7E018]/90 text-white",
     icon: JavaScript,
   },
+  TAILWIND: {
+    name: "TailwindCSS",
+    class: "bg-[#06B6D4] text-white",
+    icon: TailWind,
+  },
 };
-
-const IMAGESSOCCER = [
-  {
-    url: "/SoccerStats/MiApp/Phones.jpg",
-    name: "Phones",
-  },
-  {
-    url: "/SoccerStats/MiApp/Fondo.png",
-    name: "LapDevice",
-  },
-];
-const PROJECTS = [
-  {
-    title: "Soccer Stats",
-    description:
-      "Aplicación dedicada a los fanáticos del fútbol y estadísticas, es perfecta para equipos de futbol 7 y 11. Soccer Stats ofrece una sólida base de datos y una API que accede a las estadísticas de tu equipo y jugadores la cual puedes vizualizar por medio de una aplicación web en Angular y registrar  los datos de tu equipo fácilmente con la app móvil. ",
-    link: "https://mysoccerstats.netlify.app",
-    details: "/soccerstats",
-    github: "https://github.com/JairMora21/AngularFutbolStats",
-    image: IMAGESSOCCER,
-    tags: [
-      TAGS.CODE,
-      TAGS.API,
-      TAGS.SECURITY,
-      TAGS.DATABASE,
-      TAGS.ANGULAR,
-      TAGS.TS,
-      TAGS.BOOTSTRAP,
-      TAGS.CLOUD,
-    ],
-    video: false,
-    linksProjects: true,
-  },
-
-  {
-    title: "Admin Rooms",
-    description:
-      "Si eres arrendador, gestionas múltiples propiedades/cuartos y buscas llevar un control preciso de tus finanzas e inmuebles, Admin Rooms es la aplicación perfecta para ti. Con Admin Rooms, puedes registrar los datos de tus clientes, hacer un seguimiento de los pagos, generar recibos digitales en formato PDF y realizar análisis detallados de tus ingresos y egresos a través de gráficas.",
-    link: "https://www.youtube.com/embed/Ih4v7aqz5-4?si=uXsUNglya8XAyaMb",
-    details: "/adminrooms",
-    github: "https://github.com/pheralb/svgl",
-    image: IMAGESSOCCER,
-    tags: [
-      TAGS.ASPNET,
-      TAGS.CODE,
-      TAGS.DATABASE,
-      TAGS.CLOUD,
-      TAGS.JS,
-      TAGS.BOOTSTRAP,
-    ],
-    video: true,
-    linksProjects: false,
-  },
-];
-
 ---
 
 <style>
@@ -139,179 +89,635 @@ const PROJECTS = [
     height: 100%;
     border: 0;
   }
+
+  .project-tab.active {
+    background-color: #4a5568;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  .carousel {
+    display: none;
+  }
+  .carousel:not(.hidden) {
+    display: block;
+  }
 </style>
 
-{
-  PROJECTS.map(
-    ({
-      image,
-      title,
-      description,
-      tags,
-      details,
-      video,
-      link,
-      linksProjects,
-      github
-    }) => (
-      <article class="mb-10">
-        <h3 class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-4 mt-5 flex items-center justify-between">
-          {title}
-          <a
-            href={details}
-            class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700
-        "
-          >
-            <span class="mx-2">Ver mas detalles</span>{" "}
-            <ArrowRight class="size-4" />
-          </a>
-        </h3>
-        <p class="text-lg mb-4 text-pretty">{description}</p>
-        <ul class="flex gap-4 mb-4 flex-wrap">
-          {tags.map((tag) => (
-            <li class="">
-              <span
-                class={`flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 ${tag.class} py-1 px-2 border border-white/30`}
-              >
-                <tag.icon class="size-4" />
-                <span class="mt-1">{tag.name}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
+<article class="mb-10">
+  <h3
+    class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-4 mt-5 flex items-center justify-between"
+  >
+    Soccer Stats
+    <a
+      href="/soccerstats"
+      class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+    >
+      <span class="mx-2">Ver más detalles</span>
+      <ArrowRight class="size-4" />
+    </a>
+  </h3>
+  <p class="text-lg mb-4 text-pretty">
+    Aplicación dedicada a los fanáticos del fútbol y estadísticas, es perfecta
+    para equipos de fútbol 7 y 11. Soccer Stats ofrece una sólida base de datos
+    y una API que accede a las estadísticas de tu equipo y jugadores la cual
+    puedes visualizar por medio de una aplicación web en Angular y registrar los
+    datos de tu equipo fácilmente con la app móvil.
+  </p>
+  <ul class="flex gap-4 mb-4 flex-wrap">
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#7B3399] text-white py-1 px-2 border border-white/30"
+      >
+        <Code class="size-4" />
+        <span class="mt-1">C#</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#0B568A] text-white py-1 px-2 border border-white/30"
+      >
+        <Api class="size-4" />
+        <span class="mt-1">API-ASP.NET</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-green-500/80 text-white py-1 px-2 border border-white/30"
+      >
+        <Security class="size-4" />
+        <span class="mt-1">JWT</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-yellow-400/80 text-white py-1 px-2 border border-white/30"
+      >
+        <DataBase class="size-4" />
+        <span class="mt-1">SQLServer</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#C40030] text-white py-1 px-2 border border-white/30"
+      >
+        <Angular class="size-4" />
+        <span class="mt-1">Angular</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#2D79C7] text-white py-1 px-2 border border-white/30"
+      >
+        <TS class="size-4" />
+        <span class="mt-1">TypeScript</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#830AFA] text-white py-1 px-2 border border-white/30"
+      >
+        <Boostrap class="size-4" />
+        <span class="mt-1">Bootstrap</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#3d32d9] text-white py-1 px-2 border border-white/30"
+      >
+        <TailWind class="size-4" />
+        <span class="mt-1">Tailwind</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#00BCF1] text-white py-1 px-2 border border-white/30"
+      >
+        <Cloud class="size-4" />
+        <span class="mt-1">Azure</span>
+      </span>
+    </li>
+  </ul>
 
-        {linksProjects ? (
-          <div class="flex gap-4 mb-4 flex-wrap">
-            <SocialPill href={github}>
-              <GithubIcon class="size-4 md:size-5" />
-              Repositorio Angular
-            </SocialPill>
-            <SocialPill href={link}>
-              <Play />
-              Ver Pagina
-            </SocialPill>
-          </div>
-        ) : null}
+  <div class="mt-5 mb-5">
+    <!-- Select para dispositivos móviles -->
+    <div class="sm:hidden">
+      <label for="project-select" class="sr-only">Selecciona un proyecto</label>
+      <select
+        id="project-select"
+        class="bg-gray-800 border border-gray-600 text-gray-200 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5"
+      >
+        <option>API REST</option>
+        <option>App Admin</option>
+        <option>App Estadisticas</option>
+      </select>
+    </div>
 
-        {video ? (
-          <div class="contenedor-responsivo">
-            <iframe
-              class="iframe-responsivo"
-              src={link}
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            />
-          </div>
-        ) : (
-          <div
-            id="default-carousel"
-            class="relative w-full"
-            data-carousel="static"
+    <!-- Pestañas para pantallas más grandes -->
+    <ul
+      id="project-tabs"
+      class="hidden text-sm font-medium text-center text-gray-400 rounded-lg shadow sm:flex"
+    >
+      <li class="w-full">
+        <button
+          data-project="App Estadisticas"
+          class="project-tab inline-block w-full p-4 bg-gray-800 rounded-l-lg hover:text-gray-300 hover:bg-gray-700 focus:outline-none"
+        >
+          App Estadisticas
+        </button>
+      </li>
+      <li class="w-full">
+        <button
+          data-project="App Admin"
+          class="project-tab inline-block w-full p-4 bg-gray-800 hover:text-gray-300 hover:bg-gray-700 focus:outline-none"
+        >
+          App Admin
+        </button>
+      </li>
+      <li class="w-full">
+        <button
+          data-project="API REST"
+          class="project-tab inline-block w-full p-4 bg-gray-800 rounded-r-lg hover:text-gray-300 hover:bg-gray-700 focus:outline-none"
+        >
+          API REST
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <div id="links-api-rest" class="dynamic-links gap-4 mb-4 flex-wrap hidden">
+    <SocialPill href="https://github.com/JairMora21/API_FutbolStats">
+      <GithubIcon class="size-4 md:size-5" />
+      Repositorio 
+    </SocialPill>
+  </div>
+
+  <div id="links-app-admin" class="dynamic-links gap-4 mb-4 flex-wrap hidden">
+    <SocialPill href="https://github.com/JairMora21/SoccerStatsAdmin">
+      <GithubIcon class="size-4 md:size-5" />
+      Repositorio 
+    </SocialPill>
+    <SocialPill href=https://www.youtube.com/watch?v=o0zI3GxiNFw">
+      <Play />
+      Ver Video Demostrativo
+    </SocialPill>
+  </div>
+
+  <div
+    id="links-app-estadisticas"
+    class="dynamic-links gap-4 mb-4 flex-wrap hidden"
+  >
+    <SocialPill href="https://github.com/JairMora21/AngularFutbolStats">
+      <GithubIcon class="size-4 md:size-5" />
+      Repositorio
+    </SocialPill>
+    <SocialPill href="https://mysoccerstats.netlify.app">
+      <Play />
+      Ver Página Web
+    </SocialPill>
+  </div>
+
+  <div id="app-estadisticas-carousel" class="carousel hidden">
+    <div class="relative w-full" data-carousel="static">
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div
+          class="hidden duration-200 ease-linear interval-10"
+          data-carousel-item
+        >
+          <img
+            src="/SoccerStats/MiApp/Phones.jpg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="Phones"
+          />
+        </div>
+        <div
+          class="hidden duration-200 ease-linear interval-10"
+          data-carousel-item
+        >
+          <img
+            src="/SoccerStats/MiApp/Fondo.png"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="LapDevice"
+          />
+        </div>
+      </div>
+      <div
+        class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+      >
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to="0"></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 2"
+          data-carousel-slide-to="1"></button>
+      </div>
+      <button
+        type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
           >
-            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-              {image.map((f) => (
-                <div
-                  class="hidden duration-200 ease-linear interval-10"
-                  data-carousel-item
-                >
-                  <img
-                    src={f.url}
-                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt={f.name}
-                  />
-                </div>
-              ))}
-            </div>
-            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="true"
-                aria-label="Slide 1"
-                data-carousel-slide-to="0"
-              />
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 2"
-                data-carousel-slide-to="1"
-              />
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 3"
-                data-carousel-slide-to="2"
-              />
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 4"
-                data-carousel-slide-to="3"
-              />
-              <button
-                type="button"
-                class="w-3 h-3 rounded-full"
-                aria-current="false"
-                aria-label="Slide 5"
-                data-carousel-slide-to="4"
-              />
-            </div>
-            <button
-              type="button"
-              class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-prev
-            >
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 1 1 5l4 4"
-                  />
-                </svg>
-                <span class="sr-only">Previous</span>
-              </span>
-            </button>
-            <button
-              type="button"
-              class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-next
-            >
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-                <span class="sr-only">Next</span>
-              </span>
-            </button>
-          </div>
-        )}
-      </article>
-    )
-  )
-}
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"></path>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"></path>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div id="app-admin-carousel" class="carousel hidden">
+    <div class="relative w-full" data-carousel="static">
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div
+          class="hidden duration-200 ease-linear interval-10"
+          data-carousel-item
+        >
+          <img
+            src="/public/SoccerStats/SoccerAdmin/soccer-admin-main-menu.png"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="Phones"
+          />
+        </div>
+        <div
+          class="hidden duration-200 ease-linear interval-10"
+          data-carousel-item
+        >
+          <img
+            src="/public/SoccerStats/SoccerAdmin/CrearPartido.png"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="Phones"
+          />
+        </div>
+        <div
+          class="hidden duration-200 ease-linear interval-10"
+          data-carousel-item
+        >
+          <img
+            src="/public/SoccerStats/SoccerAdmin/Jugadores.png"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="Phones"
+          />
+        </div>
+      </div>
+      <div
+        class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+      >
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to="0"></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 2"
+          data-carousel-slide-to="1"></button>
+      </div>
+      <button
+        type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"></path>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"></path>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div id="api-rest-carousel" class="carousel hidden">
+    <div class="relative w-full" data-carousel="static">
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div
+          class="hidden duration-200 ease-linear interval-10"
+          data-carousel-item
+        >
+          <img
+            src="/public/SoccerStats/Api/NET-Main.png"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="Phones"
+          />
+        </div>
+        <div
+          class="hidden duration-200 ease-linear interval-10"
+          data-carousel-item
+        >
+          <img
+            src="/public/SoccerStats/Api/API-main.png"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt="Phones"
+          />
+        </div>
+      </div>
+      <div
+        class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+      >
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to="0"></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 2"
+          data-carousel-slide-to="1"></button>
+      </div>
+      <button
+        type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"></path>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"></path>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</article>
+
+<article class="mb-10">
+  <h3
+    class="text-2xl font-semibold text-yellow-200 dark:text-yellow-200 mb-4 mt-5 flex items-center justify-between"
+  >
+    Admin Rooms
+    <a
+      href="/adminrooms"
+      class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+    >
+      <span class="mx-2">Ver más detalles</span>
+      <ArrowRight class="size-4" />
+    </a>
+  </h3>
+  <p class="text-lg mb-4 text-pretty">
+    Si eres arrendador, gestionas múltiples propiedades/cuartos y buscas llevar
+    un control preciso de tus finanzas e inmuebles, Admin Rooms es la aplicación
+    perfecta para ti. Con Admin Rooms, puedes registrar los datos de tus
+    clientes, hacer un seguimiento de los pagos, generar recibos digitales en
+    formato PDF y realizar análisis detallados de tus ingresos y egresos a
+    través de gráficas.
+  </p>
+  <ul class="flex gap-4 mb-4 flex-wrap">
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#0B568A] text-white py-1 px-2 border border-white/30"
+      >
+        <Api class="size-4" />
+        <span class="mt-1">ASP.NET</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#7B3399] text-white py-1 px-2 border border-white/30"
+      >
+        <Code class="size-4" />
+        <span class="mt-1">C#</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-yellow-400/80 text-white py-1 px-2 border border-white/30"
+      >
+        <DataBase class="size-4" />
+        <span class="mt-1">SQLServer</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#00BCF1] text-white py-1 px-2 border border-white/30"
+      >
+        <Cloud class="size-4" />
+        <span class="mt-1">Azure</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#F7E018]/90 text-white py-1 px-2 border border-white/30"
+      >
+        <JavaScript class="size-4" />
+        <span class="mt-1">JavaScript</span>
+      </span>
+    </li>
+    <li>
+      <span
+        class="flex gap-x-2 rounded-full text-xs shadow-2xl shadow-white/40 bg-[#830AFA] text-white py-1 px-2 border border-white/30"
+      >
+        <Boostrap class="size-4" />
+        <span class="mt-1">Bootstrap</span>
+      </span>
+    </li>
+  </ul>
+
+  <div class="contenedor-responsivo">
+    <iframe
+      class="iframe-responsivo"
+      src="https://www.youtube.com/embed/Ih4v7aqz5-4?si=uXsUNglya8XAyaMb"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+</article>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const selectElement = document.getElementById(
+      "project-select",
+    ) as HTMLSelectElement | null;
+    const tabs = document.querySelectorAll(
+      ".project-tab",
+    ) as NodeListOf<HTMLButtonElement>;
+
+    function showProjectLinks(projectName: string): void {
+      const allLinks = document.querySelectorAll<HTMLElement>(".dynamic-links");
+      const allCarousels = document.querySelectorAll<HTMLElement>(".carousel");
+
+      allLinks.forEach((link) => {
+        link.style.display = "none";
+      });
+      allCarousels.forEach((carousel) => {
+        carousel.style.display = "none";
+      });
+
+      const selectedLinks = document.getElementById(
+        `links-${projectName.toLowerCase().replace(/\s+/g, "-")}`,
+      );
+      const selectedCarousel = document.getElementById(
+        `${projectName.toLowerCase().replace(/\s+/g, "-")}-carousel`,
+      );
+
+      if (selectedLinks) {
+        selectedLinks.style.display = "flex";
+      }
+      if (selectedCarousel) {
+        selectedCarousel.style.display = "block";
+      }
+    }
+
+    function updateActiveTab(selectedProject: string): void {
+      tabs.forEach((tab) => {
+        if (tab.dataset.project === selectedProject) {
+          tab.classList.add("active");
+        } else {
+          tab.classList.remove("active");
+        }
+      });
+    }
+
+    if (selectElement) {
+      selectElement.addEventListener("change", function () {
+        updateActiveTab(this.value);
+        showProjectLinks(this.value);
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const project = tab.dataset.project;
+        if (project) {
+          updateActiveTab(project);
+          showProjectLinks(project);
+        }
+      });
+    });
+
+    if (tabs.length > 0) {
+      const initialProject = tabs[0].dataset.project;
+      if (initialProject) {
+        updateActiveTab(initialProject);
+        showProjectLinks(initialProject);
+      }
+    }
+  });
+</script>
