@@ -26,7 +26,7 @@ import UserIcon from "../icons/User.astro";
         src="https://media.licdn.com/dms/image/D5603AQEn4x7MZH75HA/profile-displayphoto-shrink_800_800/0/1684459285192?e=2147483647&v=beta&t=XGrisDEpBgjLL_WpEWKpIzeaDMnPGMqgyRA66w_Z__U"
         alt="Jair foto"
       />
-      <div class="md:flex md:pb-6 pb-3 lg:pb-10 ">
+      <div class="md:flex md:pb-6 pb-3 lg:pb-10">
         <h1
           class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-grow-0 gap-x-4 mb-1"
         >
@@ -38,72 +38,74 @@ import UserIcon from "../icons/User.astro";
           rel="noopener"
           class="md:ml-4 md:mt-3"
         >
-          <Badge><span class="text-xs md:text-sm">Disponible para trabajar</span></Badge>
+          <Badge
+            ><span class="text-xs md:text-sm">Disponible para trabajar</span
+            ></Badge
+          >
         </a>
       </div>
 
       <h2 class="text-lg lg:text-2xl text-wrap mb-4 text-white">
-         <span class="text-yellow-200/90">Ingeniero de Software</span> enfocado en el 
-        <span class="text-blue-600/90">Backend</span>, con experiencia en múltiples proyectos 
-        tanto laborales como personales. Aunque mi especialización es en el desarrollo 
-       Backend, también poseo un conocimiento sólido 
-        en <span class="text-blue-600/90">Frontend</span>, lo que me permite abordar de manera 
-        integral todas las etapas del ciclo de vida del desarrollo de software.
+        <span class="text-yellow-200/90">Ingeniero de Software</span> especializado
+        en desarrollo
+        <span class="text-blue-600/90">Backend</span>, con experiencia en .NET,
+        Angular, Nest.js y manejo de bases de datos entre otras. He participado
+        tanto en aplicaciones internas que optimizan procesos empresariales como
+        en plataformas que utilizan miles de usuarios diariamente. He trabajado
+        con metodologías ágiles como Scrum, cuidando aspectos de UX/UI para
+        crear soluciones eficientes y escalables. Además, siempre busco
+        mantenerme actualizado realizando cursos y proyectos personales
       </h2>
-      
-      </h2>
-      <nav class="flex gap-4 mb-4 flex-wrap">
-        <SocialPill
-          href="https://www.linkedin.com/in/jairmora/"
-        >
-          <LinkedinIcon class="size-4 md:size-6 " />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/JairMora21" c>
-          <GithubIcon class="size-4 md:size-6" />
-          GitHub
-        </SocialPill>
-        <SocialPill href="https://platzi.com/p/jairantonio21/">
-          <PlatziIcon class="size-4 md:size-6" />
-          Platzi
-        </SocialPill>
-        <SocialPill href="https://github.com/JairMora21">
-          <MailIcon class="size-4 md:size-6" />
-          jairantonio21@hotmail.com
-        </SocialPill>
-      </nav>
     </SectionContainer>
-
-    <SectionContainer class="mb-10" id="sobre-mi">
-      <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
-        <UserIcon class="sixe-8 mt-1" />
-        Sobre mi
-      </h2>
-      <AboutMe />
-    </SectionContainer>
-
-    <SectionContainer id="experiencia">
-      <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
-        <BriefcaseIcon class="sixe-8 mt-1" />
-        Experencia Laboral
-      </h2>
-      <Experience />
-    </SectionContainer>
-
-    <SectionContainer id="estudios" class="mb-10">
-      <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
-        <SchoolIcon class="sixe-8 mt-1" />
-        Estudios y Certificados
-      </h2>
-      <Estudios />
-    </SectionContainer>
-
-    <SectionContainer id="proyectos">
-      <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
-        <CodeIcon class="sixe-8 mt-1" />
-        Proyectos
-      </h2>
-      <Proyects />
-    </SectionContainer>
+    <nav class="flex gap-4 mb-4 flex-wrap">
+      <SocialPill href="https://www.linkedin.com/in/jairmora/">
+        <LinkedinIcon class="size-4 md:size-6" />
+        LinkedIn
+      </SocialPill>
+      <SocialPill href="https://github.com/JairMora21" c>
+        <GithubIcon class="size-4 md:size-6" />
+        GitHub
+      </SocialPill>
+      <SocialPill href="https://platzi.com/p/jairantonio21/">
+        <PlatziIcon class="size-4 md:size-6" />
+        Platzi
+      </SocialPill>
+      <SocialPill href="https://github.com/JairMora21">
+        <MailIcon class="size-4 md:size-6" />
+        jairantonio21@hotmail.com
+      </SocialPill>
+    </nav>
   </main>
+
+  <SectionContainer class="mb-10" id="sobre-mi">
+    <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
+      <UserIcon class="sixe-8 mt-1" />
+      Sobre mi
+    </h2>
+    <AboutMe />
+  </SectionContainer>
+
+  <SectionContainer id="experiencia">
+    <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
+      <BriefcaseIcon class="sixe-8 mt-1" />
+      Experencia Laboral
+    </h2>
+    <Experience />
+  </SectionContainer>
+
+  <SectionContainer id="estudios" class="mb-10">
+    <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
+      <SchoolIcon class="sixe-8 mt-1" />
+      Estudios y Certificados
+    </h2>
+    <Estudios />
+  </SectionContainer>
+
+  <SectionContainer id="proyectos">
+    <h2 class="text-2xl font-semibold mb-3 flex gap-x-3 item-center">
+      <CodeIcon class="sixe-8 mt-1" />
+      Proyectos
+    </h2>
+    <Proyects />
+  </SectionContainer>
 </Layout>
